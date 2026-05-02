@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NovaLine Roleplay</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #cfe9ff;
+    color: black;
+  }
+
+  header {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    padding: 20px;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .nav button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: white;
+    font-weight: bold;
+  }
+
+  .nav button:hover {
+    background: #e6f4ff;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .section { display:none; }
+  .active { display:block; }
+
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0 10px;
+  }
+
+  .item {
+    background: white;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .item:hover { background:#e6f4ff; }
+
+  .title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .msg {
+    white-space: pre-wrap;
+  }
+
+  .copied {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: black;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<header>NovaLine Roleplay</header>
+
+<div class="nav">
+  <button onclick="showSection('public')">Public Announcements</button>
+  <button onclick="showSection('training')">Staff Training</button>
+  <button onclick="showSection('rules')">Rules</button>
+</div>
+
+<div class="container">
+
+<!-- PUBLIC -->
+<div id="public" class="section active">
+
+  <div class="section-title">Job Announcements</div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Liberty Café</div><div class="msg">:h ☕ The Liberty Café is now open! Stop by and grab a fresh cup of coffee to start your day right.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Three Guys</div><div class="msg">:h 🍟 Three Guys is now open! Stop by and grab a quick, delicious meal</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Jewelry Store</div><div class="msg">:h 💎 The jewelry store is now open! Come find the perfect piece to match your style.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Bank</div><div class="msg">:h 🏦 The bank is now open! Stop by to manage your money.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Barber Shop</div><div class="msg">:h 💈 Maple County Barber Shop is now open! Stop by for a fresh cut and leave looking sharp.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">La Masa</div><div class="msg">:h 🌮 La Masa is now open! Stop by and grab some fresh, delicious food.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Taxi</div><div class="msg">:h 🚕 Taxi services are now available! Call for a ride and get to your destination quickly and safely.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Limo</div><div class="msg">:h 🚘 Limo services are now available! Ride in luxury and arrive in style.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Bakery</div><div class="msg">:h 🧁 The bakery is open! Come by and buy some fresh goods.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Movie Theater</div><div class="msg">:h 🎬 The movie theater is now open! Come watch the latest films and enjoy the show on the big screen.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Rick and John’s</div><div class="msg">:h 🍽️ Rick and John's is now open! Come enjoy a great meal and good vibes with us.</div></div>
+
+  <div class="section-title">Team Balance</div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Police Team Balance</div><div class="msg">:h 🚔 Please help balance the teams — we’re looking for more players on the Police WL Team.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Sheriff Team Balance</div><div class="msg">:h 🚓 Please help balance the teams — we’re looking for more players on the Sheriff WL Team.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">DOT Team Balance</div><div class="msg">:h 🚧 Please help balance the teams — we’re looking for more players on the DOT WL Team.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">EMS Team Balance</div><div class="msg">:h 🚑 Please help balance the teams — we’re looking for more players on the EMS Team.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Fire Department Team Balance</div><div class="msg">:h 🚒 Please help balance the teams — we’re looking for more players on the Fire Department Team.</div></div>
+
+</div>
+
+<!-- TRAINING -->
+<div id="training" class="section">
+  <div class="section-title">Staff Training</div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">1</div><div class="msg">Welcome, trainees. I am your instructor, [Rank] [Username]. I will be training you today to determine whether you are capable of becoming a staff member.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">2</div><div class="msg">We will now go over the expectations for this training. The following rules are in place:</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">3</div><div class="msg">You are always expected to use proper SPaG (Spelling, Punctuation, and Grammar).</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">4</div><div class="msg">PTS (Permission to Speak): Do not speak unless given permission.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">5</div><div class="msg">Be respectful to everyone at all times.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">6</div><div class="msg">Listen carefully to all instructions.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">7</div><div class="msg">Do not interrupt others while they are speaking.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">8</div><div class="msg">Stay focused and mature throughout the training.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">9</div><div class="msg">Follow all server/community rules at all times.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">10</div><div class="msg">Ask questions only when permitted to do so.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">11</div><div class="msg">Failure to follow these rules may result in removal from the training.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">12</div><div class="msg">Let us begin.</div></div>
+
+</div>
+
+<!-- RULES -->
+<div id="rules" class="section">
+  <div class="section-title">Rules</div>
+
+  <div class="item"><div class="title">Respect Everyone</div><div class="msg">Treat all members with courtesy and respect. Rude, insulting, or disrespectful behavior is not allowed.</div></div>
+
+  <div class="item"><div class="title">No Toxicity or Threats</div><div class="msg">Be respectful at all times. Toxic behavior, harassment, or threats will not be tolerated.</div></div>
+
+  <div class="item"><div class="title">No Spamming</div><div class="msg">Do not spam messages, images, emojis, or reactions. This disrupts conversations for others.</div></div>
+
+  <div class="item"><div class="title">No NSFW Content</div><div class="msg">Sharing explicit, adult, or graphic content of any kind is strictly prohibited.</div></div>
+
+  <div class="item"><div class="title">Use Appropriate Language</div><div class="msg">Use respectful and appropriate language. Offensive, hateful, or harmful words are not allowed.</div></div>
+
+  <div class="item"><div class="title">Nickname Requirement</div><div class="msg">Your Discord username must match your Roblox username.</div></div>
+
+  <div class="item"><div class="title">Limit Mentions</div><div class="msg">Avoid excessive or unnecessary pings. Do not spam @mentions.</div></div>
+
+  <div class="item"><div class="title">No Advertising</div><div class="msg">Advertising other servers, services, or content is not allowed.</div></div>
+
+  <div class="item"><div class="title">No Alternate Accounts</div><div class="msg">Only one account is allowed per user in the server. Alt accounts are not permitted.</div></div>
+
+  <div class="item"><div class="title">Use Common Sense</div><div class="msg">Not every rule can be written. If something seems wrong or disruptive, don’t do it.</div></div>
+
+  <div class="section-title">Guidelines</div>
+
+  <div class="item"><div class="title">Discord Terms of Service</div><div class="msg"><a href="https://discord.com/terms" target="_blank">Discord Terms of Service</a></div></div>
+
+  <div class="item"><div class="title">Roblox Terms of Use</div><div class="msg"><a href="https://en.help.roblox.com/hc/en-us/articles/115004647846-Roblox-Terms-of-Use" target="_blank">Roblox Terms of Use</a></div></div>
+
+  <div class="item"><div class="title">Discord Community Guidelines</div><div class="msg"><a href="https://discord.com/guidelines/" target="_blank">Discord Community Guidelines</a></div></div>
+
+  <div class="item"><div class="title">PRC Guidelines</div><div class="msg"><a href="https://discord.com/channels/505904189613015050/505904446224597004" target="_blank">PRC Guidelines</a></div></div>
+
+  <div class="section-title">Banned Vehicles</div>
+  <div class="item"><div class="title">Vehicle List</div><div class="msg">Kavoc Heladera 2023</div></div>
+
+  <div class="section-title">Banned Weapons</div>
+  <div class="item"><div class="title">Weapon List</div><div class="msg">Remington MSR
+Remington 700
+Remington 870
+M249
+Orsis T 5000
+Benelli M4
+Spas 12
+Type 89
+Mp5
+Ruger Sr 556
+M4A1
+Fabarm Fp6
+Kriss Vector
+Tec-9
+PPsh 41</div></div>
+
+  <div class="section-title">Boosters Vehicles</div>
+  <div class="item"><div class="title">Booster Vehicles</div><div class="msg">2020 Strugatti Ettore
+2022 Falcon Heritage Track
+2021 Falcon Heritage
+2023 Chevlon Corbata 8
+Leland Limo</div></div>
+
+  <div class="section-title">Boosters Weapons</div>
+  <div class="item"><div class="title">Booster Weapons</div><div class="msg">Ak 47
+G3C3</div></div>
+
+  <div class="section-title">Extra Notes</div>
+  <div class="item"><div class="title">Lawn Mower Rule</div><div class="msg">Lawn Mower is permitted, but it must not be operated on streets or public roads.</div></div>
+
+</div>
+
+<div id="popup" class="copied" class="copied">Copied!</div>
+
+<script>
+function showSection(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function copyText(el){
+  let msg = el.querySelector('.msg').innerText;
+  navigator.clipboard.writeText(msg.trim());
+  const popup=document.getElementById('popup');
+  popup.style.display='block';
+  setTimeout(()=>popup.style.display='none',1200);
+}
+</script>
+
+</body>
+</html>
