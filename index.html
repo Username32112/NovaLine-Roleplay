@@ -4,129 +4,87 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>NovaLine Roleplay</title>
-
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #cfe9ff;
+    color: black;
+  }
 
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #bfe6ff, #eaf6ff);
-  color: #111;
-}
+  header {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    padding: 20px;
+  }
 
-/* HEADER */
-header {
-  text-align: center;
-  font-size: 42px;
-  font-weight: 800;
-  padding: 30px;
-  letter-spacing: 1px;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
+  .nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+  }
 
-/* NAV */
-.nav {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  padding: 10px;
-  flex-wrap: wrap;
-}
+  .nav button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: white;
+    font-weight: bold;
+  }
 
-.nav button {
-  padding: 12px 18px;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(10px);
-  font-weight: 600;
-  transition: 0.2s ease;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-}
+  .nav button:hover {
+    background: #e6f4ff;
+  }
 
-.nav button:hover {
-  transform: translateY(-2px);
-  background: #ffffff;
-}
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+  }
 
-/* CONTAINER */
-.container {
-  max-width: 950px;
-  margin: auto;
-  padding: 25px;
-}
+  .section { display:none; }
+  .active { display:block; }
 
-/* SECTIONS */
-.section {
-  display: none;
-  animation: fade 0.25s ease-in-out;
-}
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0 10px;
+  }
 
-.active {
-  display: block;
-}
+  .item {
+    background: white;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 10px;
+    cursor: pointer;
+  }
 
-@keyframes fade {
-  from {opacity:0; transform: translateY(10px);}
-  to {opacity:1; transform: translateY(0);}
-}
+  .item:hover { background:#e6f4ff; }
 
-/* SECTION TITLE */
-.section-title {
-  font-size: 22px;
-  font-weight: 700;
-  margin: 25px 0 12px;
-  color: #0a2a3a;
-}
+  .title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
 
-/* ITEM CARDS */
-.item {
-  background: rgba(255,255,255,0.75);
-  backdrop-filter: blur(12px);
-  padding: 14px;
-  margin: 10px 0;
-  border-radius: 14px;
-  cursor: pointer;
-  transition: 0.2s ease;
-  border: 1px solid rgba(0,0,0,0.05);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-}
+  .msg {
+    white-space: pre-wrap;
+  }
 
-.item:hover {
-  transform: scale(1.02);
-  background: #ffffff;
-}
-
-.title {
-  font-weight: 700;
-  margin-bottom: 6px;
-  font-size: 15px;
-}
-
-.msg {
-  white-space: pre-wrap;
-  font-size: 14px;
-  opacity: 0.85;
-}
-
-/* POPUP */
-.copied {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background: rgba(0,0,0,0.85);
-  color: white;
-  padding: 12px 16px;
-  border-radius: 12px;
-  display: none;
-  font-weight: 600;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
+  .copied {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: black;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: none;
+  }
 </style>
 </head>
-
 <body>
 
 <header>NovaLine Roleplay</header>
@@ -154,6 +112,64 @@ header {
 
   <div class="item" onclick="copyText(this)"><div class="title">Barber Shop</div><div class="msg">:h 💈 Maple County Barber Shop is now open! Stop by for a fresh cut and leave looking sharp.</div></div>
 
+  <div class="item" onclick="copyText(this)"><div class="title">La Masa</div><div class="msg">:h 🌮 La Masa is now open! Stop by and grab some fresh, delicious food.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Taxi</div><div class="msg">:h 🚕 Taxi services are now available! Call for a ride and get to your destination quickly and safely.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Limo</div><div class="msg">:h 🚘 Limo services are now available! Ride in luxury and arrive in style.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Bakery</div><div class="msg">:h 🧁 The bakery is open! Come by and buy some fresh goods.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Movie Theater</div><div class="msg">:h 🎬 The movie theater is now open! Come watch the latest films and enjoy the show on the big screen.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Rick and John’s</div><div class="msg">:h 🍽️ Rick and John's is now open! Come enjoy a great meal and good vibes with us.</div></div>
+
+  <div class="section-title">Team Balance</div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Police Team Balance</div><div class="msg">:h 🚔 Please help balance the teams — we’re looking for more players on the Police WL Team.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Sheriff Team Balance</div><div class="msg">:h 🚓 Please help balance the teams — we’re looking for more players on the Sheriff WL Team.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">DOT Team Balance</div><div class="msg">:h 🚧 Please help balance the teams — we’re looking for more players on the DOT WL Team.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">EMS Team Balance</div><div class="msg">:h 🚑 Please help balance the teams — we’re looking for more players on the EMS Team.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Fire Department Team Balance</div><div class="msg">:h 🚒 Please help balance the teams — we’re looking for more players on the Fire Department Team.</div></div>
+
+  <div class="section-title">Job Call-Out</div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Gas Depot</div><div class="msg">:h ⛽ Were limited on gas, join gas depot to help out.😀</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Three Guys Call-Out</div><div class="msg">:h 🍔 Three guys is PACKED please join the job and help out.😁</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Hospital Call-Out</div><div class="msg">:h 🚑 Some of the people of NLRP are injured please help the people by joining the hospital job.😃</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Barber Call-Out</div><div class="msg">:h 💇 Do you think you’re a good barber? Put your skills to the test by giving the people of NLRP a haircut at the Maple County barber shop.😆</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">La Mesa Call-Out</div><div class="msg">:h 🌮 La Mesa is crowded please join the job and help out.😇</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Post Office Call-Out</div><div class="msg">:h 📫 The Post Office is full of mail. Join the job and deliver mail.😸</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Farm Call-Out</div><div class="msg">:h 🌽 Crops are taking over Skyspire! Join the farm to help control them. 😎</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">News Call-Out</div><div class="msg">:h 📰 Crime is taking over and people don’t even know! Be a news reporter and help people find out about crime.😄</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Gadget Shack Call-Out</div><div class="msg">:h 📱 Gadget Shack is filled please join the job and help out.😬</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Movie Theatre Call-Out</div><div class="msg">:h 🎥 Don’t you love that fresh smell of popcorn? Be a movie theatre worker and have fun!🙂</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Bakery Call-Out</div><div class="msg">:h 🧁 The bakery is crammed please join the job and help out.😺</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Rick and Johns Call-Out</div><div class="msg">:h 🍕 Rick and Johns is overcrowded please join the job and help out.🙏</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Liberty Cafe Call-Out</div><div class="msg">:h ☕ Liberty Cafe is full please join the job and help out.👍</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Garbage Call-Out</div><div class="msg">:h 🗑️ Garbage is everywhere! Join the garbage team and clean up the trash.😮</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Bank Call-Out</div><div class="msg">:h 💵 Do you like money? If yes, then join the bank worker job!🤑</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Bus Call-Out</div><div class="msg">:h 🚌 Do you like driving transportation vehicles? If yes, then join the valley transit job!🤩</div></div>
+
 </div>
 
 <!-- TRAINING -->
@@ -162,9 +178,27 @@ header {
 
   <div class="item" onclick="copyText(this)"><div class="title">1</div><div class="msg">Welcome, trainees. I am your instructor, [Rank] [Username]. I will be training you today to determine whether you are capable of becoming a staff member.</div></div>
 
-  <div class="item" onclick="copyText(this)"><div class="title">2</div><div class="msg">We will now go over expectations for this training.</div></div>
+  <div class="item" onclick="copyText(this)"><div class="title">2</div><div class="msg">We will now go over the expectations for this training. The following rules are in place:</div></div>
 
-  <div class="item" onclick="copyText(this)"><div class="title">3</div><div class="msg">Always use proper SPaG.</div></div>
+  <div class="item" onclick="copyText(this)"><div class="title">3</div><div class="msg">You are always expected to use proper SPaG (Spelling, Punctuation, and Grammar).</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">4</div><div class="msg">PTS (Permission to Speak): Do not speak unless given permission.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">5</div><div class="msg">Be respectful to everyone at all times.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">6</div><div class="msg">Listen carefully to all instructions.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">7</div><div class="msg">Do not interrupt others while they are speaking.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">8</div><div class="msg">Stay focused and mature throughout the training.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">9</div><div class="msg">Follow all server/community rules at all times.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">10</div><div class="msg">Ask questions only when permitted to do so.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">11</div><div class="msg">Failure to follow these rules may result in removal from the training.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">12</div><div class="msg">Let us begin.</div></div>
 
 </div>
 
@@ -172,13 +206,69 @@ header {
 <div id="rules" class="section">
   <div class="section-title">Rules</div>
 
-  <div class="item"><div class="title">Respect Everyone</div><div class="msg">Treat all members with respect.</div></div>
+  <div class="item"><div class="title">Respect Everyone</div><div class="msg">Treat all members with courtesy and respect. Rude, insulting, or disrespectful behavior is not allowed.</div></div>
 
-  <div class="item"><div class="title">No Toxicity</div><div class="msg">No harassment or threats.</div></div>
+  <div class="item"><div class="title">No Toxicity or Threats</div><div class="msg">Be respectful at all times. Toxic behavior, harassment, or threats will not be tolerated.</div></div>
 
-  <div class="item"><div class="title">No Spamming</div><div class="msg">Do not spam messages or emojis.</div></div>
+  <div class="item"><div class="title">No Spamming</div><div class="msg">Do not spam messages, images, emojis, or reactions. This disrupts conversations for others.</div></div>
 
-</div>
+  <div class="item"><div class="title">No NSFW Content</div><div class="msg">Sharing explicit, adult, or graphic content of any kind is strictly prohibited.</div></div>
+
+  <div class="item"><div class="title">Use Appropriate Language</div><div class="msg">Use respectful and appropriate language. Offensive, hateful, or harmful words are not allowed.</div></div>
+
+  <div class="item"><div class="title">Nickname Requirement</div><div class="msg">Your Discord username must match your Roblox username.</div></div>
+
+  <div class="item"><div class="title">Limit Mentions</div><div class="msg">Avoid excessive or unnecessary pings. Do not spam @mentions.</div></div>
+
+  <div class="item"><div class="title">No Advertising</div><div class="msg">Advertising other servers, services, or content is not allowed.</div></div>
+
+  <div class="item"><div class="title">No Alternate Accounts</div><div class="msg">Only one account is allowed per user in the server. Alt accounts are not permitted.</div></div>
+
+  <div class="item"><div class="title">Use Common Sense</div><div class="msg">Not every rule can be written. If something seems wrong or disruptive, don’t do it.</div></div>
+
+  <div class="section-title">Guidelines</div>
+
+  <div class="item"><div class="title">Discord Terms of Service</div><div class="msg"><a href="https://discord.com/terms" target="_blank">Discord Terms of Service</a></div></div>
+
+  <div class="item"><div class="title">Roblox Terms of Use</div><div class="msg"><a href="https://en.help.roblox.com/hc/en-us/articles/115004647846-Roblox-Terms-of-Use" target="_blank">Roblox Terms of Use</a></div></div>
+
+  <div class="item"><div class="title">Discord Community Guidelines</div><div class="msg"><a href="https://discord.com/guidelines/" target="_blank">Discord Community Guidelines</a></div></div>
+
+  <div class="item"><div class="title">PRC Guidelines</div><div class="msg"><a href="https://discord.com/channels/505904189613015050/505904446224597004" target="_blank">PRC Guidelines</a></div></div>
+
+  <div class="section-title">Banned Vehicles</div>
+  <div class="item"><div class="title">Vehicle List</div><div class="msg">Kavoc Heladera 2023</div></div>
+
+  <div class="section-title">Banned Weapons</div>
+  <div class="item"><div class="title">Weapon List</div><div class="msg">Remington MSR
+Remington 700
+Remington 870
+M249
+Orsis T 5000
+Benelli M4
+Spas 12
+Type 89
+Mp5
+Ruger Sr 556
+M4A1
+Fabarm Fp6
+Kriss Vector
+Tec-9
+PPsh 41</div></div>
+
+  <div class="section-title">Boosters Vehicles</div>
+  <div class="item"><div class="title">Booster Vehicles</div><div class="msg">2020 Strugatti Ettore
+2022 Falcon Heritage Track
+2021 Falcon Heritage
+2023 Chevlon Corbata 8
+Leland Limo</div></div>
+
+  <div class="section-title">Boosters Weapons</div>
+  <div class="item"><div class="title">Booster Weapons</div><div class="msg">Ak 47
+G3C3</div></div>
+
+  <div class="section-title">Extra Notes</div>
+  <div class="item"><div class="title">Lawn Mower Rule</div><div class="msg">Lawn Mower is permitted, but it must not be operated on streets or public roads.</div></div>
 
 </div>
 
@@ -193,11 +283,9 @@ function showSection(id){
 function copyText(el){
   let msg = el.querySelector('.msg').innerText;
   navigator.clipboard.writeText(msg.trim());
-
-  const popup = document.getElementById('popup');
-  popup.style.display = 'block';
-
-  setTimeout(() => popup.style.display = 'none', 1200);
+  const popup=document.getElementById('popup');
+  popup.style.display='block';
+  setTimeout(()=>popup.style.display='none',1200);
 }
 </script>
 
