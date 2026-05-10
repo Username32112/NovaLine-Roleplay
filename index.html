@@ -11,203 +11,226 @@ body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #070a1f, #1a0f2e, #0a1b3d);
   color: white;
-  overflow-x: hidden;
 }
 
-/* NAV */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 40px;
-  background: rgba(0,0,0,0.35);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid #2b2b55;
-  position: sticky;
-  top: 0;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo img {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-}
-
-nav a {
-  color: #bdbdbd;
-  margin-left: 20px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: white;
-  transform: scale(1.1);
-}
-
-/* HERO */
-.hero {
+/* HEADER */
+header {
   text-align: center;
-  padding: 120px 20px;
-  animation: fadeIn 1.5s ease;
+  font-size: 34px;
+  font-weight: bold;
+  padding: 20px;
 }
 
-.hero h1 {
-  font-size: 60px;
-  margin: 0;
-  text-shadow: 0 0 25px #6a5cff;
+header img {
+  height: 60px;
+  vertical-align: middle;
+  margin-right: 10px;
 }
 
-.hero p {
-  color: #cfcfcf;
-  font-size: 18px;
+/* TABS */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  flex-wrap: wrap;
 }
 
-/* BUTTON */
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 28px;
-  background: #6a5cff;
+.nav button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.1);
   color: white;
-  border-radius: 12px;
-  text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
-  box-shadow: 0 0 12px #6a5cff;
 }
 
-.btn:hover {
+.nav button:hover {
   transform: scale(1.15);
-  background: #8b7dff;
-  box-shadow: 0 0 30px #8b7dff;
+  background: #6a5cff;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
 }
 
 /* SECTIONS */
 .section {
-  padding: 60px 20px;
-  text-align: center;
-  animation: fadeInUp 1s ease;
+  display: none;
+  animation: fadeIn 0.5s ease;
 }
 
-.card {
-  background: rgba(255,255,255,0.05);
-  padding: 25px;
-  margin: 15px auto;
-  width: 80%;
-  max-width: 750px;
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
+.active {
+  display: block;
 }
 
-/* DISCORD */
-.discord-box {
-  margin: auto;
-  width: 320px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 0 25px #5865F2;
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0 10px;
+}
+
+/* COPY ITEMS */
+.item {
+  background: rgba(255,255,255,0.06);
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 12px;
+  cursor: pointer;
   transition: 0.3s;
 }
 
-.discord-box:hover {
+.item:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 15px #6a5cff;
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #777;
+.title {
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-/* ANIMATIONS */
+.msg {
+  white-space: pre-wrap;
+}
+
+/* POPUP */
+.copied {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: black;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  display: none;
+}
+
+/* ANIMATION */
 @keyframes fadeIn {
   from {opacity: 0;}
   to {opacity: 1;}
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-  <div class="logo">
-    <img src="NovaLineLogo.png" alt="Logo">
-    <h2>NovaLine RP</h2>
-  </div>
+<header>
+  <img src="NovaLineLogo.png">
+  NovaLine Roleplay
+</header>
 
-  <div>
-    <a href="#about">About</a>
-    <a href="#rules">Rules</a>
-    <a href="#discord">Discord</a>
-  </div>
-</nav>
-
-<div class="hero">
-  <h1>NovaLine Roleplay</h1>
-  <p>Serious • Realistic • High Quality RP Experience</p>
-  <a class="btn" href="#discord">Join Now</a>
+<div class="nav">
+  <button onclick="showSection('announcements')">Announcements</button>
+  <button onclick="showSection('jobs')">Jobs</button>
+  <button onclick="showSection('balance')">Team Balance</button>
+  <button onclick="showSection('callouts')">Call-Outs</button>
+  <button onclick="showSection('training')">Training</button>
+  <button onclick="showSection('rules')">Rules</button>
 </div>
 
-<div class="section" id="about">
-  <h2>About NovaLine</h2>
-  <div class="card">
-    NovaLine Roleplay is a structured and immersive RP community focused on realism, active staff, and high-quality roleplay experiences.
-  </div>
+<div class="container">
+
+<!-- ANNOUNCEMENTS -->
+<div id="announcements" class="section active">
+
+  <div class="section-title">Job Announcements</div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Liberty Café</div><div class="msg">:h ☕ The Liberty Café is now open! Stop by and grab a fresh cup of coffee to start your day right.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Three Guys</div><div class="msg">:h 🍟 Three Guys is now open! Stop by and grab a quick, delicious meal</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Jewelry Store</div><div class="msg">:h 💎 The jewelry store is now open! Come find the perfect piece to match your style.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Bank</div><div class="msg">:h 🏦 The bank is now open! Stop by to manage your money.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Barber Shop</div><div class="msg">:h 💈 Maple County Barber Shop is now open! Stop by for a fresh cut and leave looking sharp.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">La Masa</div><div class="msg">:h 🌮 La Masa is now open! Stop by and grab some fresh, delicious food.</div></div>
+
 </div>
 
-<div class="section" id="rules">
-  <h2>Rules</h2>
-  <div class="card">
-    1. Respect all players at all times<br>
-    2. No RDM / VDM<br>
-    3. No exploiting or cheating<br>
-    4. Follow realistic RP at all times<br>
-    5. No toxicity or harassment<br>
-  </div>
+<!-- JOBS -->
+<div id="jobs" class="section">
+
+  <div class="section-title">Job Call-Outs</div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Gas Depot</div><div class="msg">:h ⛽ Were limited on gas, join gas depot to help out.😀</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Three Guys</div><div class="msg">:h 🍔 Three guys is PACKED please join the job and help out.😁</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Hospital</div><div class="msg">:h 🚑 Some of the people of NLRP are injured please help the people by joining the hospital job.😃</div></div>
+
 </div>
 
-<div class="section" id="discord">
-  <h2>Join Our Discord</h2>
+<!-- TEAM BALANCE -->
+<div id="balance" class="section">
 
-  <!-- LIVE DISCORD WIDGET -->
-  <div class="discord-box">
-    <iframe 
-      src="https://discord.com/widget?id=1450946605757894860&theme=dark"
-      width="320"
-      height="400"
-      allowtransparency="true"
-      frameborder="0">
-    </iframe>
-  </div>
+  <div class="section-title">Team Balance</div>
 
-  <a class="btn" href="https://discord.gg/MY8zXRg2Y5" target="_blank">
-    Join Discord
-  </a>
+  <div class="item" onclick="copyText(this)"><div class="title">Police</div><div class="msg">:h 🚔 We’re looking for more Police WL members.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">EMS</div><div class="msg">:h 🚑 We’re looking for more EMS members.</div></div>
+
 </div>
 
-<footer>
-  © 2026 NovaLine Roleplay. All rights reserved.
-</footer>
+<!-- CALLOUTS -->
+<div id="callouts" class="section">
+
+  <div class="section-title">Call-Outs</div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Gas Depot</div><div class="msg">:h ⛽ Were limited on gas, join gas depot to help out.😀</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Hospital</div><div class="msg">:h 🚑 Some of the people of NLRP are injured please help.😃</div></div>
+
+</div>
+
+<!-- TRAINING -->
+<div id="training" class="section">
+
+  <div class="section-title">Staff Training</div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Rule 1</div><div class="msg">Use proper SPaG at all times.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Rule 2</div><div class="msg">Do not speak without permission.</div></div>
+
+</div>
+
+<!-- RULES -->
+<div id="rules" class="section">
+
+  <div class="section-title">Rules</div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">Respect</div><div class="msg">Treat all members with respect.</div></div>
+
+  <div class="item" onclick="copyText(this)"><div class="title">No Toxicity</div><div class="msg">No harassment or threats allowed.</div></div>
+
+</div>
+
+</div>
+
+<div id="popup" class="copied">Copied!</div>
+
+<script>
+function showSection(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function copyText(el){
+  let msg = el.querySelector('.msg').innerText;
+  navigator.clipboard.writeText(msg.trim());
+  const popup=document.getElementById('popup');
+  popup.style.display='block';
+  setTimeout(()=>popup.style.display='none',1200);
+}
+</script>
 
 </body>
 </html>
