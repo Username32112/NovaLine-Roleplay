@@ -13,7 +13,6 @@ body {
   color: white;
 }
 
-/* HEADER */
 header {
   text-align: center;
   font-size: 34px;
@@ -54,7 +53,7 @@ header img {
 
 /* SECTIONS */
 .container {
-  max-width: 950px;
+  max-width: 1000px;
   margin: auto;
   padding: 20px;
 }
@@ -74,20 +73,17 @@ header img {
   margin: 20px 0 10px;
 }
 
-/* ITEMS (COPY SYSTEM ONLY FOR ANNOUNCEMENTS) */
+/* COPY ITEMS (ANNOUNCEMENTS ONLY) */
 .item {
   background: rgba(255,255,255,0.06);
   padding: 12px;
   margin: 8px 0;
   border-radius: 12px;
+  cursor: pointer;
   transition: 0.3s;
 }
 
-.copy {
-  cursor: pointer;
-}
-
-.copy:hover {
+.item:hover {
   transform: scale(1.05);
   box-shadow: 0 0 15px #6a5cff;
 }
@@ -101,27 +97,41 @@ header img {
   white-space: pre-wrap;
 }
 
-/* BUTTON */
-.btn {
-  display: inline-block;
-  padding: 12px 18px;
-  background: #5865F2;
-  border-radius: 10px;
-  color: white;
-  text-decoration: none;
-  margin: 8px;
+/* DEPARTMENT WIDGETS */
+.dept {
+  background: rgba(255,255,255,0.07);
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 12px;
   transition: 0.3s;
 }
 
-.btn:hover {
+.dept:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px #6a5cff;
+}
+
+.join {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #5865F2;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.join:hover {
   transform: scale(1.1);
 }
 
-/* DISCORD EMBED */
-.discord {
-  margin-top: 10px;
-  border-radius: 12px;
-  overflow: hidden;
+/* RULE BOX */
+.rule {
+  background: rgba(255,255,255,0.06);
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 10px;
 }
 
 /* ANIMATION */
@@ -142,136 +152,109 @@ header img {
 <div class="nav">
   <button onclick="showSection('announcements')">Announcements</button>
   <button onclick="showSection('departments')">Departments</button>
-  <button onclick="showSection('discord')">Discord</button>
   <button onclick="showSection('rules')">Rules</button>
 </div>
 
 <div class="container">
 
-<!-- ANNOUNCEMENTS (COPY SYSTEM ONLY) -->
+<!-- ANNOUNCEMENTS (UNCHANGED COPY SYSTEM) -->
 <div id="announcements" class="section active">
 
 <div class="section-title">Job Announcements</div>
 
-<div class="item copy" onclick="copyText(this)"><div class="title">Liberty Cafe</div><div class="msg">:h ☕ The Liberty Café is now open!
- Stop by and grab a fresh cup of coffee to start your day right.</div></div>
+<div class="item" onclick="copyText(this)"><div class="title">Liberty Cafe</div><div class="msg">:h ☕ The Liberty Café is now open!
+Stop by and grab a fresh cup of coffee to start your day right.</div></div>
 
-<div class="item copy" onclick="copyText(this)"><div class="title">Three Guys</div><div class="msg">:h 🍟 Three Guys is now open!
+<div class="item" onclick="copyText(this)"><div class="title">Three Guys</div><div class="msg">:h 🍟 Three Guys is now open!
 Stop by and grab a quick, delicious meal</div></div>
 
-<div class="item copy" onclick="copyText(this)"><div class="title">Jewelry Store</div><div class="msg">:h 💎 The jewelry store is now open!
+<div class="item" onclick="copyText(this)"><div class="title">Jewelry Store</div><div class="msg">:h 💎 The jewelry store is now open!
 Come find the perfect piece to match your style.</div></div>
 
-<div class="item copy" onclick="copyText(this)"><div class="title">Bank</div><div class="msg">:h 🏦 The bank is now open!
+<div class="item" onclick="copyText(this)"><div class="title">Bank</div><div class="msg">:h 🏦 The bank is now open!
 Stop by to manage your money.</div></div>
 
-<div class="item copy" onclick="copyText(this)"><div class="title">Barber Shop</div><div class="msg">:h 💈 Maple County Barber Shop is now open!
+<div class="item" onclick="copyText(this)"><div class="title">Barber Shop</div><div class="msg">:h 💈 Maple County Barber Shop is now open!
 Stop by for a fresh cut and leave looking sharp.</div></div>
 
-<div class="item copy" onclick="copyText(this)"><div class="title">La Masa</div><div class="msg">:h 🌮 La Masa is now open!
+<div class="item" onclick="copyText(this)"><div class="title">La Masa</div><div class="msg">:h 🌮 La Masa is now open!
 Stop by and grab some fresh, delicious food.</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">Taxi</div><div class="msg">:h 🚕 Taxi services are now available!
-Call for a ride and get to your destination quickly and safely.</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">Limo</div><div class="msg">:h 🚘 Limo services are now available!
-Ride in luxury and arrive in style.</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">Bakery</div><div class="msg">:h 🧁 The bakery is open!
-Come by and buy some fresh goods.</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">Movie Theater</div><div class="msg">:h 🎬 The movie theater is now open!
- Come watch the latest films and enjoy the show on the big screen.</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">Rick and John’s</div><div class="msg">:h 🍽️ Rick and John's is now open!
-Come enjoy a great meal and good vibes with us.</div></div>
-
-<div class="section-title">Team Balance</div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">Police</div><div class="msg">:h 🚔 Please help balance the teams — we’re looking for more players on the Police WL Team.</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">Sheriff</div><div class="msg">:h 🚓 Please help balance the teams — we’re looking for more players on the Sheriff WL Team.</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">DOT</div><div class="msg">:h 🚧 Please help balance the teams — we’re looking for more players on the DOT WL Team.</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">EMS</div><div class="msg">:h 🚑 Please help balance the teams — we’re looking for more players on the EMS Team.</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">Fire Dept</div><div class="msg">:h 🚒 Please help balance the teams — we’re looking for more players on the Fire Department Team.</div></div>
-
-<div class="section-title">Job Call Outs</div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">Gas Depot</div><div class="msg">:h ⛽ Were limited on gas, join gas depot to help out.😀</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">Three Guys</div><div class="msg">:h 🍔 Three guys is PACKED please join the job and help out.😁</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">Hospital</div><div class="msg">:h 🚑 Some of the people of NLRP are injured please help the people by joining the hospital job.😃</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">Barber</div><div class="msg">:h 💇 Do you think you’re a good barber? Put your skills to the test by giving the people of NLRP a haircut at the Maple County barber shop.😆</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">La Mesa</div><div class="msg">:h 🌮 La Mesa is crowded please join the job and help out.😇</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">Post Office</div><div class="msg">:h 📫 The Post Office is full of mail. Join the job and deliver mail.😸</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">Farm</div><div class="msg">:h 🌽 Crops are taking over Skyspire! Join the farm to help control them. 😎</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">News</div><div class="msg">:h 📰 Crime is taking over and people don’t even know! Be a news reporter and help people find out about crime.😄</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">Gadget Shack</div><div class="msg">:h 📱 Gadget Shack is filled please join the job and help out.😬</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">Movie Theatre</div><div class="msg">:h 🎥 Don’t you love that fresh smell of popcorn? Be a movie theatre worker and have fun!🙂</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">Bakery</div><div class="msg">:h 🧁 The bakery is crammed please join the job and help out.😺</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">Rick and Johns</div><div class="msg">:h 🍕 Rick and Johns is overcrowded please join the job and help out.🙏</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">Liberty Cafe</div><div class="msg">:h ☕ Liberty Cafe is full please join the job and help out.👍</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">Garbage</div><div class="msg">:h 🗑️ Garbage is everywhere! Join the garbage team and clean up the trash.😮</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">Bank</div><div class="msg">:h 💵 Do you like money? If yes, then join the bank worker job!🤑</div></div>
-
-<div class="item copy" onclick="copyText(this)"><div class="title">Bus</div><div class="msg">:h 🚌 Do you like driving transportation vehicles? If yes, then join the valley transit job!🤩</div></div>
 
 </div>
 
-<!-- DEPARTMENTS -->
+<!-- DEPARTMENTS (WIDGET STYLE + JOIN BUTTONS) -->
 <div id="departments" class="section">
 
 <div class="section-title">Departments</div>
 
-<div class="item">Maple County Highway Patrol</div>
-<div class="item">Maple County Sheriff</div>
-<div class="item">Skyspire Police Department</div>
-<div class="item">NovaLine Fire & EMS</div>
-<div class="item">Department of Transportation</div>
+<div class="dept">
+  <b>Maple County Highway Patrol</b><br>
+  ID: 1497412434753749122<br>
+  <a class="join" href="https://discord.gg/uZmF75p3s2" target="_blank">Join Discord</a>
+</div>
+
+<div class="dept">
+  <b>Maple County Sheriff</b><br>
+  ID: 1497412182151921664<br>
+  <a class="join" href="https://discord.gg/zPxMupeFDV" target="_blank">Join Discord</a>
+</div>
+
+<div class="dept">
+  <b>Skyspire Police Department</b><br>
+  ID: 1492335651503341678<br>
+  <a class="join" href="https://discord.gg/ATU8N3rvpT" target="_blank">Join Discord</a>
+</div>
+
+<div class="dept">
+  <b>NovaLine Fire & EMS</b><br>
+  ID: 1492335903606046831<br>
+  <a class="join" href="https://discord.gg/spk392QNdP" target="_blank">Join Discord</a>
+</div>
+
+<div class="dept">
+  <b>Department of Transportation</b><br>
+  ID: 1492336198541119488<br>
+  <a class="join" href="https://discord.gg/8AcYgqMYHG" target="_blank">Join Discord</a>
+</div>
 
 </div>
 
-<!-- DISCORD -->
-<div id="discord" class="section">
-
-<div class="section-title">Discord</div>
-
-<a class="btn" href="https://discord.gg/MY8zXRg2Y5" target="_blank">Join Main Discord</a>
-
-<div class="discord">
-<iframe src="https://discord.com/widget?id=1450946605757894860&theme=dark" width="100%" height="350"></iframe>
-</div>
-
-</div>
-
-<!-- RULES -->
+<!-- RULES (FULL YOUR VERSION) -->
 <div id="rules" class="section">
 
-<div class="section-title">Rules</div>
+<div class="section-title">Server Rules</div>
 
-<div class="item">1. Respect Everyone</div>
-<div class="item">2. No Toxicity or Threats</div>
-<div class="item">3. No Spamming</div>
-<div class="item">4. No NSFW Content</div>
-<div class="item">5. Use Appropriate Language</div>
-<div class="item">6. No Advertising</div>
-<div class="item">7. Follow Staff Instructions</div>
+<div class="rule">1. Respect Everyone<br>Treat all members with courtesy and respect at all times. Disrespect, sarcasm meant to insult, or rude behavior is not allowed.</div>
+
+<div class="rule">2. No Toxicity or Threats<br>Harassment, threats, intimidation, or toxic behavior of any kind will result in immediate action.</div>
+
+<div class="rule">3. No Spamming<br>Do not spam messages, emojis, images, reactions, or commands.</div>
+
+<div class="rule">4. No NSFW Content<br>Any explicit, sexual, graphic, or adult content is strictly prohibited.</div>
+
+<div class="rule">5. Use Appropriate Language<br>Profanity, hate speech, slurs, or offensive language is not allowed.</div>
+
+<div class="rule">6. Username Requirement<br>Your Discord username must match your Roblox username.</div>
+
+<div class="rule">7. Limit Mentions<br>Do not spam @mentions.</div>
+
+<div class="rule">8. No Advertising<br>No advertising other servers or services.</div>
+
+<div class="rule">9. No Alts<br>Only one account allowed.</div>
+
+<div class="rule">10. Follow Staff Instructions<br>Staff decisions are final.</div>
+
+<div class="rule">11. No Bypassing Rules<br>Bypassing rules in any form is still a violation.</div>
+
+<div class="rule">12. No Drama<br>No arguments or drama in chat.</div>
+
+<div class="rule">13. Stay Relevant<br>Keep chats on-topic.</div>
+
+<div class="rule">14. No Impersonation<br>No impersonating staff or users.</div>
+
+<div class="rule">15. Use Common Sense<br>If it seems wrong, don’t do it.</div>
+
+<div class="rule">16. Zero Tolerance<br>Serious violations may result in instant ban.</div>
 
 </div>
 
