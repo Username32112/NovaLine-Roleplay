@@ -27,7 +27,7 @@ header img {
   margin-right: 10px;
 }
 
-/* TABS */
+/* NAV */
 .nav {
   display: flex;
   justify-content: center;
@@ -48,21 +48,20 @@ header img {
 }
 
 .nav button:hover {
-  transform: scale(1.15);
+  transform: scale(1.1);
   background: #6a5cff;
 }
 
-/* CONTAINER */
+/* SECTIONS */
 .container {
   max-width: 900px;
   margin: auto;
   padding: 20px;
 }
 
-/* SECTIONS */
 .section {
   display: none;
-  animation: fadeIn 0.5s ease;
+  animation: fadeIn 0.4s ease;
 }
 
 .active {
@@ -75,7 +74,7 @@ header img {
   margin: 20px 0 10px;
 }
 
-/* COPY ITEMS */
+/* ITEMS */
 .item {
   background: rgba(255,255,255,0.06);
   padding: 12px;
@@ -99,18 +98,6 @@ header img {
   white-space: pre-wrap;
 }
 
-/* POPUP */
-.copied {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: black;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 8px;
-  display: none;
-}
-
 /* ANIMATION */
 @keyframes fadeIn {
   from {opacity: 0;}
@@ -128,10 +115,7 @@ header img {
 
 <div class="nav">
   <button onclick="showSection('announcements')">Announcements</button>
-  <button onclick="showSection('jobs')">Jobs</button>
-  <button onclick="showSection('balance')">Team Balance</button>
-  <button onclick="showSection('callouts')">Call-Outs</button>
-  <button onclick="showSection('training')">Training</button>
+  <button onclick="showSection('discord')">Discord</button>
   <button onclick="showSection('rules')">Rules</button>
 </div>
 
@@ -140,82 +124,57 @@ header img {
 <!-- ANNOUNCEMENTS -->
 <div id="announcements" class="section active">
 
-  <div class="section-title">Job Announcements</div>
+  <div class="section-title">Announcements</div>
 
-  <div class="item" onclick="copyText(this)"><div class="title">Liberty Café</div><div class="msg">:h ☕ The Liberty Café is now open! Stop by and grab a fresh cup of coffee to start your day right.</div></div>
+  <div class="item" onclick="copyText(this)">
+    <div class="title">Jewelry Store</div>
+    <div class="msg">:h 💎 The jewelry store is now open! Come find the perfect piece to match your style.</div>
+  </div>
 
-  <div class="item" onclick="copyText(this)"><div class="title">Three Guys</div><div class="msg">:h 🍟 Three Guys is now open! Stop by and grab a quick, delicious meal</div></div>
+  <div class="item" onclick="copyText(this)">
+    <div class="title">Bank</div>
+    <div class="msg">:h 🏦 The bank is now open! Stop by to manage your money.</div>
+  </div>
 
-  <div class="item" onclick="copyText(this)"><div class="title">Jewelry Store</div><div class="msg">:h 💎 The jewelry store is now open! Come find the perfect piece to match your style.</div></div>
-
-  <div class="item" onclick="copyText(this)"><div class="title">Bank</div><div class="msg">:h 🏦 The bank is now open! Stop by to manage your money.</div></div>
-
-  <div class="item" onclick="copyText(this)"><div class="title">Barber Shop</div><div class="msg">:h 💈 Maple County Barber Shop is now open! Stop by for a fresh cut and leave looking sharp.</div></div>
-
-  <div class="item" onclick="copyText(this)"><div class="title">La Masa</div><div class="msg">:h 🌮 La Masa is now open! Stop by and grab some fresh, delicious food.</div></div>
-
-</div>
-
-<!-- JOBS -->
-<div id="jobs" class="section">
-
-  <div class="section-title">Job Call-Outs</div>
-
-  <div class="item" onclick="copyText(this)"><div class="title">Gas Depot</div><div class="msg">:h ⛽ Were limited on gas, join gas depot to help out.😀</div></div>
-
-  <div class="item" onclick="copyText(this)"><div class="title">Three Guys</div><div class="msg">:h 🍔 Three guys is PACKED please join the job and help out.😁</div></div>
-
-  <div class="item" onclick="copyText(this)"><div class="title">Hospital</div><div class="msg">:h 🚑 Some of the people of NLRP are injured please help the people by joining the hospital job.😃</div></div>
+  <div class="item" onclick="copyText(this)">
+    <div class="title">Barber Shop</div>
+    <div class="msg">:h 💈 Maple County Barber Shop is now open! Stop by for a fresh cut.</div>
+  </div>
 
 </div>
 
-<!-- TEAM BALANCE -->
-<div id="balance" class="section">
+<!-- DISCORD -->
+<div id="discord" class="section">
 
-  <div class="section-title">Team Balance</div>
+  <div class="section-title">Discord Information</div>
 
-  <div class="item" onclick="copyText(this)"><div class="title">Police</div><div class="msg">:h 🚔 We’re looking for more Police WL members.</div></div>
+  <div class="item" onclick="copyText(this)">
+    <div class="title">Invite Link</div>
+    <div class="msg">https://discord.gg/MY8zXRg2Y5</div>
+  </div>
 
-  <div class="item" onclick="copyText(this)"><div class="title">EMS</div><div class="msg">:h 🚑 We’re looking for more EMS members.</div></div>
+  <div class="section-title">Discord Rules</div>
 
-</div>
-
-<!-- CALLOUTS -->
-<div id="callouts" class="section">
-
-  <div class="section-title">Call-Outs</div>
-
-  <div class="item" onclick="copyText(this)"><div class="title">Gas Depot</div><div class="msg">:h ⛽ Were limited on gas, join gas depot to help out.😀</div></div>
-
-  <div class="item" onclick="copyText(this)"><div class="title">Hospital</div><div class="msg">:h 🚑 Some of the people of NLRP are injured please help.😃</div></div>
-
-</div>
-
-<!-- TRAINING -->
-<div id="training" class="section">
-
-  <div class="section-title">Staff Training</div>
-
-  <div class="item" onclick="copyText(this)"><div class="title">Rule 1</div><div class="msg">Use proper SPaG at all times.</div></div>
-
-  <div class="item" onclick="copyText(this)"><div class="title">Rule 2</div><div class="msg">Do not speak without permission.</div></div>
+  <div class="item"><div class="title">1. Respect Everyone</div><div class="msg">Treat all members with courtesy and respect at all times.</div></div>
+  <div class="item"><div class="title">2. No Toxicity</div><div class="msg">Harassment, threats, or toxic behavior is not allowed.</div></div>
+  <div class="item"><div class="title">3. No Spamming</div><div class="msg">Do not spam messages, emojis, or commands.</div></div>
+  <div class="item"><div class="title">4. No NSFW Content</div><div class="msg">No explicit or adult content allowed.</div></div>
+  <div class="item"><div class="title">5. No Advertising</div><div class="msg">Advertising is strictly forbidden.</div></div>
 
 </div>
 
 <!-- RULES -->
 <div id="rules" class="section">
 
-  <div class="section-title">Rules</div>
+  <div class="section-title">Server Rules</div>
 
-  <div class="item" onclick="copyText(this)"><div class="title">Respect</div><div class="msg">Treat all members with respect.</div></div>
+  <div class="item"><div class="title">General Rule</div><div class="msg">Use common sense at all times.</div></div>
 
-  <div class="item" onclick="copyText(this)"><div class="title">No Toxicity</div><div class="msg">No harassment or threats allowed.</div></div>
-
-</div>
+  <div class="item"><div class="title">Staff Instructions</div><div class="msg">Always follow staff instructions.</div></div>
 
 </div>
 
-<div id="popup" class="copied">Copied!</div>
+</div>
 
 <script>
 function showSection(id){
@@ -226,9 +185,7 @@ function showSection(id){
 function copyText(el){
   let msg = el.querySelector('.msg').innerText;
   navigator.clipboard.writeText(msg.trim());
-  const popup=document.getElementById('popup');
-  popup.style.display='block';
-  setTimeout(()=>popup.style.display='none',1200);
+  alert("Copied!");
 }
 </script>
 
